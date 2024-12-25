@@ -4,9 +4,6 @@ body {
     background-color: #ffffff;
     color: #2d4154;
   }
-
-
-
   main {
     margin-top: 30px;
   }
@@ -16,18 +13,13 @@ body {
     margin: 48px;
     border: 1px solid #d7d7d9;
   }
-  
- 
-
-  
+   
   .measurements {
     position: relative;
     left: 25px;
     top: -10px;
   }
-  
- 
-  
+    
   .side-info {
     position: relative;
     left: 72px;
