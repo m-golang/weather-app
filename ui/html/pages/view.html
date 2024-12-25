@@ -1,0 +1,55 @@
+{{define "main"}}
+
+        <!-- container-current-weather -->
+        <section class="current-weather">
+            <div class="container">
+                <div class="cw">
+                    <h2 class="weather-today-text cw">Current Weather</h2>
+                </div>
+                <div class="cw">
+                    <h2 class="weather-today-text cw">{{.Weather.Location.Name}}</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container-today-weather">
+                    <img class="today-weather-icon" src="https://{{.Weather.Current.Condition.Icon }}" alt="Weather Icon" />
+                    <p style="margin-left: 20px"class="weather-today-text condition-today">{{.Weather.Current.Condition.Text}}</p>
+                </div>
+                <h2 class="current-tempc">
+                    {{.Weather.Current.TempC}}°C 
+                </h2>
+                <div class="weather-info-row">
+                    <div class="weather-info-column">
+                        <p class="info-tag">Humidity: {{.Weather.Current.Humidity}}%</p>
+                        <p class="info-tag">Wind: {{.Weather.Current.WindDir}},{{.Weather.Current.WindKph}}kph</p>
+                        <p class="info-tag">Pressure: {{.Weather.Current.PressureMb}} mb</p>
+                    </div>
+
+                    <div class="weather-info-column">
+                        <p class="info-tag">Precip: {{.Weather.Current.Precip_mm}} mm</p>
+                        <p class="info-tag">Visibility: {{.Weather.Current.VisKm}} km</p>
+                        <p class="info-tag">Clouds: {{.Weather.Current.Cloud}}%</p>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </section>
+
+        <!--Next days forecast-->
+        <section class="forecast">
+            <div class="row week-forecast box">
+                {{range .Weather.Forecast.ForecastDays}}
+                <div class="col item">
+                    <div class="date">
+                        <h3>{{ .DayName}}</h3>
+                        <p>{{.FormattedTime}}</p>
+                    </div>
+                    <img src="https://{{ .Day.Condition.Icon}}" alt="Weather Icon"/><br />
+                    <h4 class="weather-tempc-max">{{ .Day.MaxTempC}}°</h4>
+                    <h4 class="weather-tempc-min">{{ .Day.MinTempC}}°</h4>
+                    <!-- <p class="weather-condition">{{ .Day.Condition.Text }}</p> -->
+                </div>
+                {{end}}
+            </div>
+        </section>
+{{end}}
