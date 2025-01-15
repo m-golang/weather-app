@@ -21,8 +21,8 @@ A simple weather API built with Go (Gin framework) that fetches weather data bas
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/weather-api.git
-   cd weather-api
+   git clone https://github.com/m-golang/weather-app.git
+   cd weather-app
 2. Install dependencies:
    ```bash
    go mod tidy
